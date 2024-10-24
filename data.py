@@ -13,7 +13,9 @@ tel_number = '89999999999'
 
 name_2 = 'Сергей'
 surname_2 = 'Сергеев'
-street_2 = 'улица_Сергеева'
+street_2 = 'улица Сергеева'
 tel_number_2 = '89999999998'
+
+test_url = 'https://qa-scooter.praktikum-services.ru/'
 
 

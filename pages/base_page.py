@@ -32,3 +32,6 @@ class BasePage:
         method, locator = locator_1
         locator = locator.format(num)
         return method, locator
+
+    def switch_to_window(self):
+        self.driver.switch_to.window(self.driver.window_handles[-1])

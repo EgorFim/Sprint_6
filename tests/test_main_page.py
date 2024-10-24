@@ -31,15 +31,15 @@ class TestMainPage:
 
     @allure.title('Тест кнопки заказать в хэдэре страницы')
     @allure.description('Кликаем по кнопке и ждем что откроется окно заказа')
-    def test_knopka_zakazat_header(self, driver):
+    def test_button_zakazat_in_header(self, driver):
         main_page = MainPage(driver)
-        main_page.knopka_zakazat_header_click()
-        assert main_page.find_element_with_wait(MainPageLocators.OKNO_ZAKAZA)
+        main_page.button_zakazat_in_header_click()
+        assert main_page.switch_to_order_page()
 
     @allure.title('Тест кнопки заказать в середине страницы')
     @allure.description('Кликаем по кнопке и ждем что откроется окно заказа')
-    def test_knopka_zakazat_middle(self, driver):
+    def test_button_zakazat_in_middle(self, driver):
         main_page = MainPage(driver)
-        main_page.knopka_zakazat_middle_click()
-        assert WebDriverWait(driver, 3).until(
-        expected_conditions.visibility_of_element_located(MainPageLocators.OKNO_ZAKAZA))
+        main_page.button_zakazat_in_middle_click()
+        assert main_page.switch_to_order_page()
+

@@ -36,7 +36,7 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.POLE_ADRESS)
         self.add_text_to_element(OrderPageLocators.POLE_ADRESS, street_2)
         self.click_to_element(OrderPageLocators.OPEN_SPISOK_METRO)
-        self.click_to_element(OrderPageLocators.STATION_1)
+        self.click_to_element(OrderPageLocators.STATION_2)
         self.click_to_element(OrderPageLocators.POLE_TEL)
         self.add_text_to_element(OrderPageLocators.POLE_TEL, tel_number_2)
         self.click_to_element(OrderPageLocators.ORDER_KNOPKA_DALEE)
@@ -48,7 +48,7 @@ class OrderPage(BasePage):
         self.click_to_element(OrderPageLocators.KNOPKA_ZAKAZAT_FINAL)
 
     @allure.step('Проверяем появления окна о создании заказа')
-    def proverka_sozdaniya_zakaza(self):
+    def check_create_order(self):
         return self.find_element_with_wait(OrderPageLocators.PROVERKA_ZAKAZ_OFORMLEN)
 
 

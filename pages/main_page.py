@@ -16,11 +16,11 @@ class MainPage(BasePage):
         return self.get_text_from_element(locator_a_formatted)
 
     @allure.step('Нажимаем кнопку "Заказать" в хедере')
-    def knopka_zakazat_header_click(self):
+    def button_zakazat_in_header_click(self):
          return self.click_to_element(MainPageLocators.KNOPKA_ZAKAZAT_HEADER)
 
     @allure.step('Нажимаем кнопку "Заказать" в середине страницы')
-    def knopka_zakazat_middle_click(self):
+    def button_zakazat_in_middle_click(self):
         self.scroll_to_element(MainPageLocators.KNOPKA_ZAKAZAT_MIDDLE)
         return self.click_to_element(MainPageLocators.KNOPKA_ZAKAZAT_MIDDLE)
 
@@ -29,13 +29,21 @@ class MainPage(BasePage):
         self.click_to_element(MainPageLocators.KNOPKA_SAMOKAT)
 
     @allure.step('Нажимаем кнопку "Яндекс" в хедере')
-    def knopka_yandex_click(self):
+    def button_yandex_in_header_click(self):
         self.click_to_element(MainPageLocators.KNOPKA_YANDEX)
 
     @allure.step('Проверяем переход на страницу Дзен')
-    def perehod_na_stranicu_dzen(self):
-        self.driver.switch_to.window(self.driver.window_handles[-1])
+    def switch_to_dzen_page(self):
+        self.switch_to_window()
         return self.find_element_with_wait(MainPageLocators.YANDEX_DZEN_PROVERKA)
+
+    @allure.step('Проверяем загрузку главной страницы')
+    def load_main_page(self):
+        return self.find_element_with_wait(MainPageLocators.ZAGRUZKA_GLAVNOI)
+
+    @allure.step('Проверяем переход к странице заказа')
+    def switch_to_order_page(self):
+        return self.find_element_with_wait(MainPageLocators.OKNO_ZAKAZA)
 
 
 

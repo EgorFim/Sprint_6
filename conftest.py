@@ -4,22 +4,20 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from locators.main_page_locators import MainPageLocators
 from selenium import webdriver
+from data import test_url
+
 
 
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()
-    TEST_URL = 'https://qa-scooter.praktikum-services.ru/'
-    driver.get(TEST_URL)
-    WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(MainPageLocators.ZAGRUZKA_GLAVNOI))
+    driver.get(test_url)
     yield driver
     driver.quit()
 
 @pytest.fixture
 def driver_2():
     driver = webdriver.Firefox()
-    TEST_URL = 'https://qa-scooter.praktikum-services.ru/'
-    driver.get(TEST_URL)
-    WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(MainPageLocators.ZAGRUZKA_GLAVNOI))
+    driver.get(test_url)
     yield driver
     driver.quit()
